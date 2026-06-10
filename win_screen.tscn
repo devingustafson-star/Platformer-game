@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b7jw7lg0xugkl"]
+
+[ext_resource type="Script" uid="uid://b3vj6pq34urlv" path="res://win_screen.gd" id="1_l2arl"]
+
+[node name="WinScreen" type="Control" unique_id=891890764]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 205.0
+offset_top = 104.0
+offset_right = 245.0
+offset_bottom = 144.0
+script = ExtResource("1_l2arl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=953487821]
+layout_mode = 0
+offset_left = -205.0
+offset_top = -101.0
+offset_right = 949.0
+offset_bottom = 549.0
+color = Color(0.23137255, 0.6745098, 0.7607843, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1472415755]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 207.0
+offset_right = 404.0
+offset_bottom = 238.0
+text = "Play Again"
+
+[node name="Label" type="Label" parent="." unique_id=1583992963]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 164.0
+offset_right = 390.0
+offset_bottom = 187.0
+text = "You Win"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

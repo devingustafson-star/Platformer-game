@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://blck53qbwg16o"]
+
+[ext_resource type="Script" uid="uid://dp3r63lo1pv2s" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://bvn4ok3gp128h" path="res://BAD-d-d-d-sahur-pixilart.png" id="1_7k104"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(72, 17)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1163523062]
+script = ExtResource("1_4gyqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=19985532]
+texture = ExtResource("1_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=888291784]
+position = Vector2(0, 30.5)
+shape = SubResource("RectangleShape2D_4gyqm")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1680572442]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1801439083]
+polygon = PackedVector2Array(28, 18, 18, 17, 12, 5, 8, -14, 10, -23, 6, -32, -16, -32, -20, -22, -20, -9, -19, -4, -21, 5, -21, 14, -20, 18)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
